@@ -1,0 +1,156 @@
+.footer {
+  &__inner {
+    border-top: 3px solid #eeeeee;
+    padding-top: 72px;
+    @include breakpoint(tablet) {
+      padding-top: 36px;
+    }
+    @include breakpoint(mobile) {
+      text-align: center;
+    }
+  }
+  &__col3,
+  &__col2,
+  &__col1 {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+  }
+  &__col1 {
+    width: 33%;
+    padding-left: 135px;
+    @include breakpoint(tablet) {
+      padding: 0;
+      width: 34.5%;
+    }
+    @include breakpoint(mobile) {
+      width: 100%;
+    }
+    img {
+      position: absolute;
+      left: 6px;
+      top: 0;
+      width: 84px;
+      height: 124px;
+      @include breakpoint(tablet) {
+        position: static;
+        display: block;
+        margin-bottom: 33px;
+      }
+      @include breakpoint(mobile) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+  &__col2 {
+    width: 480px;
+    padding-left: 225px;
+    @include breakpoint(tablet) {
+      padding: 0;
+      width: 36%;
+    }
+    @include breakpoint(mobile) {
+      width: 100%;
+    }
+    img {
+      position: absolute;
+      left: 0;
+      top:0;
+      width: 180px;
+      height: 50px;
+      @include breakpoint(tablet) {
+        position: static;
+        display: block;
+        margin: 84px 0 23px 0;
+      }
+      @include breakpoint(mobile) {
+        margin: 13px auto 23px auto;
+      }
+    }
+  }
+  &__col3 {
+    float: right;
+    width: 135px;
+    @include breakpoint(tablet) {
+      width: 158px;
+      margin: 157px 0 0 0;
+    }
+    @include breakpoint(mobile) {
+      width: 100%;
+      margin: 30px 0 0 0;
+    }
+  }
+  h2 {
+    text-transform: uppercase;
+    font-size: 20px;
+    margin: 0 0 24px 0;
+  }
+  p {
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0 0 23px 0;
+    a {
+      text-decoration: none;
+      color: #006eb7;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+       a {
+         color: #000;
+         text-decoration: none;
+         font-size: 14px;
+         line-height: 24px;
+         display: block;
+         &:hover {
+           color: $blue;
+         }
+       }
+    }
+  }
+  .btn {
+    font-size: 13px;
+    padding: 12px 55px 12px 17px;
+  }
+}
+
+.copyright {
+  padding: 52px 0 24px 0;
+  @include breakpoint(tablet) {
+    padding-top: 42px;
+  }
+  @include breakpoint(mobile) {
+    padding-top: 16px;
+    clear: both;
+  }
+  p {
+    @include breakpoint(mobile) {
+      width: 100%;
+      text-align: center;
+    }
+    a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 9px 0 12px;
+      @include breakpoint(mobile) {
+        display: block;
+        margin: 0 0;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    font-size: 14px;
+    display: inline-block;
+    &.right {
+      float: right;
+    }
+  }
+}
