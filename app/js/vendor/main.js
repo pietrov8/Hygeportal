@@ -226,6 +226,7 @@ function initMap() {
                 map: map,
                 icon: 'http://domhygge2.getid.com.pl/wp-content/themes/hygge/images/marker.png',
                 animation: google.maps.Animation.DROP,
+                zIndex:100,
                 position: new google.maps.LatLng(myMap.getAttribute('data-lat'), myMap.getAttribute('data-lon'))
             };
 
@@ -245,7 +246,9 @@ function initMap() {
                         position: position,
                         title: item.title,
                         type: item.type,
+                        zIndex:1,
                         movies: item.movies,
+
                         animation: google.maps.Animation.DROP
                     };
                     var gmarker = new google.maps.Marker(markerOptions);
@@ -258,6 +261,13 @@ function initMap() {
                         showCloseButton: false
                     });
                     markers_table.push(gmarker)
+
+                    google.maps.event.addListener(gmarker, "mouseover", function() {
+                        this.setOptions({zIndex:30});
+                    });
+                    google.maps.event.addListener(gmarker, "click", function() {
+                        this.setOptions({zIndex:30});
+                    });
                 });
 
                 // Filtrowanie markerów
