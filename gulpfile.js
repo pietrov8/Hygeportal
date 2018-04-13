@@ -69,10 +69,13 @@ gulp.task('scripts', function() {
             'node_modules/jquery/dist/jquery.min.js',
             'node_modules/owl.carousel/dist/owl.carousel.min.js',
             'node_modules/aos/dist/aos.js',
+            'app/js/vendor/jquery.maphilight.js',
+            'app/js/vendor/tooltipster.bundle.min.js',
             'app/js/vendor/jquery.customSelect.min.js',
             'app/js/vendor/multiple-select.js',
             'app/js/vendor/jquery.waypoints.min.js',
             'app/js/vendor/jquery.counterup.min.js',
+            'app/js/vendor/imageMapResizer.min.js',
             'app/js/vendor/main.js'
         ]
     )

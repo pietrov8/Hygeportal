@@ -58,25 +58,89 @@
     </nav>
 </div>
 
-<div class="slider">
-    <div class="slider-inner">
-        <div>
-            <div class="slider__bg" style="background-image: url('images/slider-img2.png')"></div>
-        </div>
+<div class="search-list-build">
+    <div class="search-list-build__inner">
+        <img src="images/budynek.png" usemap="#image-map">
+
+        <map name="image-map">
+            <area data-tooltip="#tooltip1" target="" alt="Piętro 1" title="Piętro 1" href="" coords="403,542,1180,611,1447,601,1447,685,1180,698,402,608" shape="poly">
+            <area data-tooltip="#tooltip2" target="" alt="Piętro 2" title="Piętro 2" href="" coords="1447,601,1161,608,406,542,405,480,1153,518,1447,513" shape="poly">
+            <area data-tooltip="#tooltip3" target="" alt="Piętro 3" title="Piętro 3" href="" coords="1447,432,1158,431,406,422,406,479,1146,517,1447,513" shape="poly">
+            <area data-tooltip="#tooltip4" target="" alt="Piętro 4" title="Piętro 4" href="" coords="1447,432,1153,432,406,422,406,358,1156,346,1447,348" shape="poly">
+            <area data-tooltip="#tooltip5" target="" alt="Piętro 5" title="Piętro 5" href="" coords="1447,348,1161,343,406,356,406,285,1166,241,1447,246" shape="poly">
+            <area data-tooltip="#tooltip0" target="" alt="Parter" title="Parter" href="" coords="1423,689,1423,777,1156,787,405,664,402,604,1153,696" shape="poly">
+            <area data-tooltip="#tooltip6" target="" alt="Piętro 6" title="Piętro 6" href="" coords="1322,243,1037,244,420,287,418,226,1025,163,1322,173" shape="poly">
+        </map>
     </div>
 
-    <div class="slider__text">
-        <div class="slider__text__inner">
-            <h2 data-aos="fade-down" data-aos-delay="300">Lokalizacja</h2>
-            <h3 data-aos="fade-down" data-aos-delay="600">Zamieszkaj na sielskim Mokotowie</h3>
-        </div>
+    <div class="tooltip" id="tooltip0">
+        <h2>Parter</h2>
+        <ul class="avaiable">
+            <li class="wolne">Wolne: <strong>3</strong></li>
+            <li class="zarezerwowane">Zarezerowane: <strong>3</strong></li>
+            <li class="sprzedane">Sprzedane: <strong>3</strong></li>
+        </ul>
+    </div>
+    <div class="tooltip" id="tooltip1">
+        <h2>Piętro I</h2>
+        <ul class="avaiable">
+            <li class="wolne">Wolne: <strong>3</strong></li>
+            <li class="zarezerwowane">Zarezerowane: <strong>3</strong></li>
+            <li class="sprzedane">Sprzedane: <strong>3</strong></li>
+        </ul>
+    </div>
+    <div class="tooltip" id="tooltip2">
+        <h2>Piętro II</h2>
+        <ul class="avaiable">
+            <li class="wolne">Wolne: <strong>3</strong></li>
+            <li class="zarezerwowane">Zarezerowane: <strong>3</strong></li>
+            <li class="sprzedane">Sprzedane: <strong>3</strong></li>
+        </ul>
+    </div>
+    <div class="tooltip" id="tooltip3">
+        <h2>Piętro III</h2>
+        <ul class="avaiable">
+            <li class="wolne">Wolne: <strong>3</strong></li>
+            <li class="zarezerwowane">Zarezerowane: <strong>3</strong></li>
+            <li class="sprzedane">Sprzedane: <strong>3</strong></li>
+        </ul>
+    </div>
+    <div class="tooltip" id="tooltip4">
+        <h2>Piętro IV</h2>
+        <ul class="avaiable">
+            <li class="wolne">Wolne: <strong>3</strong></li>
+            <li class="zarezerwowane">Zarezerowane: <strong>3</strong></li>
+            <li class="sprzedane">Sprzedane: <strong>3</strong></li>
+        </ul>
+    </div>
+    <div class="tooltip" id="tooltip5">
+        <h2>Piętro V</h2>
+        <ul class="avaiable">
+            <li class="wolne">Wolne: <strong>3</strong></li>
+            <li class="zarezerwowane">Zarezerowane: <strong>3</strong></li>
+            <li class="sprzedane">Sprzedane: <strong>3</strong></li>
+        </ul>
+    </div>
+    <div class="tooltip" id="tooltip6">
+        <h2>Piętro VI</h2>
+        <ul class="avaiable">
+            <li class="wolne">Wolne: <strong>3</strong></li>
+            <li class="zarezerwowane">Zarezerowane: <strong>3</strong></li>
+            <li class="sprzedane">Sprzedane: <strong>3</strong></li>
+        </ul>
     </div>
 
-    <img src="images/dynamic-development-logo-white.svg" class="dynamic-white">
-    <a href="#" class="scroll-to"></a>
+    <div class="search-list-build__text">
+        <h2>Apartamenty</h2>
+        <h3>Wybierz Piętro lub skorzystaj<br>
+            z wyszukiwarki poniżej</h3>
+    </div>
+
+    <a href="#search" class="scroll-to btn btn--blue">Przejdź do wyszukiwarki</a>
+
 </div>
 
-<div class="search-list">
+<div class="search-list" id="search">
     <div class="container">
         <div class="search-list__title">
             <h2>Znalezione oferty: 8/62</h2>

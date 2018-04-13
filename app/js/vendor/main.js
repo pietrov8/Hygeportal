@@ -8,7 +8,7 @@ $(function () {
         AOS.refresh();
     });
     $('.counter').counterUp({
-        delay: 30,
+        // delay: 30
     });
 
     initMap();
@@ -63,13 +63,14 @@ $(function () {
         setTimeout(function () {
             content.find(".owl-prev").css("right", content.find(".owl-dots").outerWidth())
         }, 100);
+        $(".popup__inner").css("margin-top", 0)
         setTimeout(function () {
-            $(".popup__inner").addClass("open");
+            content.find(".popup__inner").addClass("open");
             var window_height = $(window).outerHeight();
-            var content_height = $(".popup__inner").outerHeight();
+            var content_height = content.find(".popup__inner").outerHeight();
 
             if (content_height < window_height) {
-                $(".popup__inner").css("margin-top", (window_height - content_height)/2)
+                $(".popup__inner").css("margin-top", (window_height - content_height)/2);
             } else {
                 $(".popup__inner").css("margin-top", 0)
             }
@@ -94,12 +95,14 @@ $(function () {
     })
     $(window).resize(function () {
         var window_height = $(window).outerHeight();
-        var content_height = $(".popup__inner").outerHeight();
+        var content_height = $(".popup__inner.open").outerHeight();
+
+        $(".popup__inner").css("margin-top", 0)
 
         if (content_height < window_height) {
-            $(".popup__inner").css("margin-top", (window_height - content_height)/2)
+            $(".popup__inner.open").css("margin-top", (window_height - content_height)/2)
         } else {
-            $(".popup__inner").css("margin-top", 0)
+            $(".popup__inner.open").css("margin-top", 0)
         }
     })
 
@@ -140,7 +143,58 @@ $(function () {
         }, 1000);
     });
 
-    $('.select-custom select').customSelect();
+    $('.select-custom select').customSelect({
+        stroke: false
+    });
+
+
+    $(document).on("mousemove", "[data-tooltip]", function (event) {
+        var hover = $($(this).attr("data-tooltip"));
+        var data = $(this).data("maphilight");
+        if (data !== undefined) {
+            data.fillOpacity = 0.5;
+            $(this).data('maphilight', data).trigger('alwaysOn.maphilight');
+        }
+        hover.css({top: event.pageY + 40,left: event.pageX - 95}).show();
+    })
+    $(document).on("mouseout", "[data-tooltip]", function (event) {
+        var hover = $($(this).attr("data-tooltip"));
+        var data = $(this).data("maphilight");
+        if (data !== undefined) {
+            data.fillOpacity = 0.37;
+            $(this).data('maphilight', data).trigger('alwaysOn.maphilight');
+        }
+        hover.stop().hide()
+    })
+
+    $(document).on("change", "[data-show-hide]", function (e) {
+        var _ = $(this).find(":selected");
+        $(_.attr("data-hide")).hide();
+        $(_.attr("data-show")).fadeIn();
+        $(".search-list-floor__inner img").maphilight({
+            'alwaysOn': true
+        })
+    });
+
+
+
+    $('.search-list-build map').imageMapResize();
+
+
+
+    if ($("[data-trigger]").length) {
+        $("[data-trigger]").trigger("change")
+    }
+
+    $('.search-list-build img').maphilight({
+        fillColor: 'eb600a',
+        fillOpacity: 0.77,
+        stroke: false
+    });
+
+    $(".search-list-floor__inner img").maphilight({
+        'alwaysOn': true
+    })
 
 
 });
@@ -170,7 +224,7 @@ function initMap() {
 
             var markerOptions = {
                 map: map,
-                icon: 'images/marker.png',
+                icon: 'http://domhygge2.getid.com.pl/wp-content/themes/hygge/images/marker.png',
                 animation: google.maps.Animation.DROP,
                 position: new google.maps.LatLng(myMap.getAttribute('data-lat'), myMap.getAttribute('data-lon'))
             };
