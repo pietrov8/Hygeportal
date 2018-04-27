@@ -85,6 +85,9 @@
       max-width: 290px;
       padding-bottom: 16px;
       position: relative;
+      .wpcf7-form-control-wrap {
+        position: static !important;
+      }
       &.textarea {
         max-width: 100%;
       }
@@ -113,6 +116,34 @@
       textarea {
         height: 132px;
       }
+    }
+    button {
+      margin-top: 10px;
+    }
+    div.wpcf7-response-output {
+      margin: 2em 0.5em 1em;
+      padding: 15px;
+      border: 2px solid $blue;
+      font-size: 14px;
+      color: $blue;
+    }
+
+    div.wpcf7-mail-sent-ok {
+      border: 2px solid $blue;
+    }
+
+    div.wpcf7-mail-sent-ng,
+    div.wpcf7-aborted {
+      border: 2px solid $blue;
+    }
+
+    div.wpcf7-spam-blocked {
+      border: 2px solid $blue;
+    }
+
+    div.wpcf7-validation-errors,
+    div.wpcf7-acceptance-missing {
+      border: 2px solid $blue;
     }
   }
 }

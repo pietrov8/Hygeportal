@@ -55,6 +55,7 @@
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
+    z-index: 100;
     &:after {
       transform: rotate(90deg);
     }
@@ -340,7 +341,7 @@
       }
     }
     &__left {
-      width: 290/930*100%;
+      width: 270/930*100%;
       min-height: 228px;
       display: flex;
       align-items: center;
@@ -373,7 +374,7 @@
       }
     }
     &__text {
-      width: 240/930*100%;
+      width: 260/930*100%;
       margin: 34px 0 0 27px;
       @include breakpoint(tablet) {
         width: 45%;

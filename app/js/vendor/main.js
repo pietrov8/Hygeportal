@@ -30,6 +30,7 @@ $(function () {
             items: 1,
             nav: true,
             autoplay: true,
+            loop: true,
             autoplayTimeout: 5000
         })
     }
@@ -37,6 +38,7 @@ $(function () {
         $(".gallery").addClass("owl-carousel").owlCarousel({
             items: 1,
             nav: true,
+            loop: true
             // autoplay: true,
             // autoplayTimeout: 5000
         })
@@ -48,6 +50,7 @@ $(function () {
                 nav: true,
                 dots: true,
                 autoplay: true,
+                loop: true,
                 autoplayTimeout: 5000
             });
         }
@@ -124,7 +127,7 @@ $(function () {
         }
     });
 
-    $('.scroll-to').click(function() {
+    $(document).on("click", ".scroll-to", function (event) {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
